@@ -1,0 +1,85 @@
+body{
+	background-color:white;
+}
+#calosc{
+	margin:0 auto;
+	width:95%;
+	min-width:1000px;
+	min-height:600px;
+	position:relative;
+}
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+#left{
+	position:relative;
+	background-color:white;
+	width:20%;
+	min-width:200px;
+	float:left;
+	min-height:600px;
+	text-align:center;
+}
+
+#left img{
+	width:200px;
+	margin:0;
+}
+
+#left ol{
+	position:fixed;
+	/*margin:0 10px;
+	margin-top:50px;*/
+	width:215px;
+	top:70px;
+	left:20px;
+	border:1px solid black;
+	text-align:left;
+}
+
+#left a{
+	text-align:left;
+	margin: 0;
+	padding:0;
+	text-decoration:none;
+	font-size:12px;
+	font-weight:bold;
+	color:black;
+}
+
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/
+
+#right{
+	background-color:rgb(230,230,230);
+	min-width:800px;
+	width:80%;
+	float:right;
+	clear:right;
+	min-height:600px;
+	padding-bottom:100px;
+}
+
+#right p{
+	color:rgba(0,0,0,0.6);
+	font-size:12px;
+	font-weight:bold;
+	text-align:justify;
+	margin:0;
+	padding:0;
+	padding-left: 50px;
+	padding-right:10px;
+}
+
+#right p span{
+	color:orange;
+}
+
+#right p a{
+	color:orange;
+	text-decoration:none;
+}
+/***************************************************************************************/
+/***************************************************************************************/
+/***************************************************************************************/

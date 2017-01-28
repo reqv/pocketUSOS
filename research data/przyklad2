@@ -1,0 +1,491 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+    "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+    <head>
+        <title>Ekonomia dla inżynierów - Przedmioty - Uniwersytet Mikołaja Kopernika w Toruniu</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <link rel="shortcut icon" href="https://usosweb.umk.pl/favicon.ico">
+        
+        
+            <style id="antiClickjack">body{display:none !important;}</style>
+            <script type="text/javascript">
+               if (self === top) {
+                   var antiClickjack = document.getElementById("antiClickjack");
+                   antiClickjack.parentNode.removeChild(antiClickjack);
+               } else {
+                   top.location = self.location;
+               }
+            </script>
+        
+        <script type="text/javascript">
+            
+            JSGLOBALS = {
+                user_id: "130061",
+                action: "katalog2/przedmioty/pokazPrzedmiot"
+            };
+            sys_www_path = "https://usosweb.umk.pl/";
+            lang = "pl";
+            csrftoken = "2015-09-30-3a1aac830ed3ed89";
+            debugMode = false;
+        </script>
+        <link rel='stylesheet' href='https://usosweb.umk.pl/css/tooltipster.css?v=4'>
+<link rel='stylesheet' href='https://usosweb.umk.pl/css/jquery-usos/jquery-usos.css?v=4'>
+<link rel='stylesheet' href='https://usosweb.umk.pl/css/theme/jquery-ui-1.10.1.custom.css'>
+<link rel='stylesheet' href='https://usosweb.umk.pl/js/jquery.fancybox/jquery.fancybox-1.3.4.css'>
+<link rel='stylesheet' href='https://usosweb.umk.pl/kontroler.php?_action=common/respacks/cssPack&module=akcje&hash=8bbc96f20b39214bf884d28bf8089bbe'>
+
+        <script type='text/javascript' src='https://usosweb.umk.pl/js/jquery-1.9.1.min.js'></script>
+<script type='text/javascript' src='https://usosweb.umk.pl/js/jquery-migrate-1.1.0.min.js'></script>
+<script type='text/javascript' src='https://usosweb.umk.pl/js/jquery-ui-1.10.1.custom.min.js'></script>
+<script type='text/javascript' src='https://usosweb.umk.pl/js/jquery-usos/latest-bundle.min.js?v=4'></script>
+<script type='text/javascript' src='https://usosweb.umk.pl/js/common.js?v=5'></script>
+<script type='text/javascript' src='https://usosweb.umk.pl/js/vendor/URI-min.js'></script>
+<script type='text/javascript' src='https://usosweb.umk.pl/js/jquery.fancybox/jquery.fancybox-1.3.4.pack.js'></script>
+<script type='text/javascript' src='https://usosweb.umk.pl/kontroler.php?_action=common/respacks/jsPack&module=akcje&hash=77977b4eb53fc01d0e1886b2be707075'></script>
+
+    </head>
+
+    <body marginwidth="0" marginheight="0">
+
+                <div class='do_not_print'><style>a.casmenu, a.casmenu:visited, a.casmenu:active { cursor: pointer; color: #fff; text-decoration: none } a.casmenu:hover { color: #fff; text-decoration: underline } b.casmenu { color: #fad35c; font-weight: bold } #casmenu td { color: #bbb; } </style>
+<div style='background: url("https://usosweb.umk.pl/img/casMenu/pasek.png"); margin: 0; padding: 0; border: 0; width: 100%; height: 27px; color: #aaa; font-family: Arial; font-size: 11px; font-weight: normal; text-decoration: none; text-align: left; border-bottom: 1px dashed #888' id='casmenu'>
+<table border="0" cellspacing='0' cellpadding='0' style='margin: 0; height:27px; width: 100%'><tr><td width="28" style='width:28px;'><img src="https://usosweb.umk.pl/img/casMenu/slonko.gif" width="28" height="27"></td><td style='white-space: nowrap; padding: 0 0 0 0px; line-height: normal; text-align: left; font-family: Tahoma; font-size: 11px'><b class='casmenu'>Uniwersytet Mikołaja Kopernika w Toruniu</b> - <a href='https://login.umk.pl/../info/pl/apps.html' class='casmenu'>Centralny punkt logowania</a><td style='white-space: nowrap; padding: 0px 8px 0 0px; line-height: normal; text-align: right; font-family: Tahoma; font-size: 11px'>Zalogowany: <b class='casmenu'>Wojciech Janeczek</b> | <a href='https://usosweb.umk.pl/kontroler.php?_action=logowaniecas/wyloguj' class='casmenu'>wyloguj się</a></td></tr></table></div></div>
+
+        <div id='layout-container'>
+            <div id='wrpopup'></div>
+
+            
+
+            
+            <div id='layout-header'>
+                <table id='layout-t1' cellspacing='0' cellpadding='0'>
+                    <tr id='layout-r1' class='do_not_print'>
+                        <td id='layout-c11'><img class='homelink' src='https://usosweb.umk.pl/kontroler.php?_action=common/getLocalStatic&file=logo.png&mtime=1382423534' alt=''></td>
+                        <td id='layout-c12'>
+                            <table id='layout-c12-t' cellspacing=0 cellpadding=0>
+                                <tr><td class='a'><div>
+                                    <link rel='stylesheet' media='screen' href='https://usosweb.umk.pl/static/changeLang/changeLang.css'>
+
+                                    <a class='changeLang' data-lang='pl'></a>
+                                </div></td></tr>
+                                <tr><td class='m'>
+                                    <a href='https://usosweb.umk.pl/kontroler.php?_action=news/default' onclick='return Common.confirmWarnings();'>AKTUALNOŚCI</a> <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/index' onclick='return Common.confirmWarnings();' class=' highlighted'>KATALOG</a> <a href='https://usosweb.umk.pl/kontroler.php?_action=home/index' onclick='return Common.confirmWarnings();'>M&Oacute;J USOSWEB</a> <a href='https://usosweb.umk.pl/kontroler.php?_action=dla_stud/index' onclick='return Common.confirmWarnings();'>DLA STUDENT&Oacute;W</a> <a href='javascript:alert("Ta część serwisu jest dostępna tylko dla pracowników.")' class=' greyed'>DLA PRACOWNIK&Oacute;W</a> <a href='https://usosweb.umk.pl/kontroler.php?_action=dodatki/index' onclick='return Common.confirmWarnings();'>MODUŁY DODATKOWE</a> 
+                                </td></tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <table id='layout-t2' cellspacing='0' cellpadding='0'>
+                <tr>
+                    <td id='layout-c21' class='do_not_print'>
+                        <div class='item level1'><a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/index' onclick='return Common.confirmWarnings();'>INDEKS</a></div><div class='item level1'><a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/osoby/index' onclick='return Common.confirmWarnings();'>STUDENCI, PRACOWNICY</a></div><div class='item level1'><a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/jednostki/index' onclick='return Common.confirmWarnings();'>JEDNOSTKI ORGANIZACYJNE</a></div><div class='item level1'><a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/index' onclick='return Common.confirmWarnings();'>PRZEDMIOTY</a></div><div class='subitems'><div class='item level2'><span class=' highlighted'>Ekonomia dla inżynier&oacute;w</span></div><div class='subitems'></div></div><div class='item level1'><a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/programy/index' onclick='return Common.confirmWarnings();'>STUDIA</a></div><div class='item level1'><a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/akademiki/index' onclick='return Common.confirmWarnings();'>AKADEMIKI</a></div><div class='item level1'><a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/pomoc' onclick='return Common.confirmWarnings();'>POMOC</a></div>
+                    </td>
+                    
+                                            <td id='layout-c22'><div id='layout-c22ff'>
+                            <div id='layout-c22a'>
+                                
+                                
+                                <link rel='stylesheet' media='screen' href='https://usosweb.umk.pl/js/jquery.fancybox/jquery.fancybox-1.3.4.css'>
+
+<script type="text/javascript">
+    $( document ).ready(function() {
+        $(".wyborProgramu").fancybox();
+    });
+</script>
+<span class='wrtext'>
+
+    <style>
+        td.userhtml { width: 600px; }
+    </style>
+
+
+<div style='float:right'><a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/pomoc&section=przedmioty' onclick='return Common.confirmWarnings();'   ><img title="katalog przedmiotów - pomoc" alt="katalog przedmiotów - pomoc" src='https://usosweb.umk.pl/img/pom.gif'></a></div>
+
+<div style='float:right'>
+    <table class='grey' cellspacing='1px' style='margin: 0 10px 10px auto; text-align: left'>
+            <tr><td class='strong' style='font-size: 100%'>
+            
+                <a href='javascript:;' onclick=";
+                            if (Common.confirmWarnings())
+                                $.fancybox({
+                                    'padding':10,
+                                    'href': 'https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/drukujSylabus&prz_kod=0800-48EDI'});">
+            <img src='img/acroread.gif' style='padding: 0 0 2px 0;vertical-align: middle; margin-left: -2px; margin-right: -2px; width: 24px; height: 24px'></a>
+                <a href='javascript:;' onclick=";
+                            if (Common.confirmWarnings())
+                                $.fancybox({
+                                    'padding':10,
+                                    'href': 'https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/drukujSylabus&prz_kod=0800-48EDI'});">
+            Drukuj sylabus</a>
+        </td></tr>
+    </table>
+</div>
+
+<h1>Ekonomia dla inżynierów</h1>
+
+
+
+<h2>Informacje ogólne</h2>
+
+<table class='grey' cellspacing='1px'>
+    <tr >
+        <td class='strong' style='text-align: right'>Kod przedmiotu:</td>
+        <td class='data'>0800-48EDI</td>
+        <td class='strong' style='text-align: right'>Kod Erasmus / ISCED:</td>
+        <td class='data'>
+                            <span class='note'>(brak danych)</span>
+                        /
+                            <span class='note'>(brak danych)</span>
+                    </td>
+    </tr>
+    <tr class='strong'>
+                    <td class='strong' style='text-align: right'>Nazwa przedmiotu:</td>
+            <td class='data' colspan='3'>Ekonomia dla inżynierów</td>
+            </tr>
+    <tr >
+        <td class='strong' style='text-align: right'>Jednostka:</td>
+        <td class='data' colspan='3'>
+            <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/jednostki/pokazJednostke&kod=0800000000' onclick='return Common.confirmWarnings();'   >Wydział Fizyki, Astronomii i Informatyki Stosowanej</a>
+        </td>
+    </tr>
+    <tr class='strong'>
+        <td class='strong' style='text-align: right'>Grupy:</td>
+        <td class='data' colspan='3'>
+                            <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/szukajPrzedmiotu&method=faculty_groups&jed_org_kod=0000000000&grupaKod=0000-POL' onclick='return Common.confirmWarnings();'   >Przedmioty z polskim językiem wykładowym</a><br>
+                    </td>
+    </tr>
+        <tr >
+        <td class='strong' style='text-align: right'>Punkty ECTS i inne:</td>
+        <td class='data' colspan='3'>
+                                                                                        <b>4.00</b>
+                                                                <span class='note'>LUB</span>
+                                                                                <b>3.00</b>
+                                                                <span class='note'>LUB</span>
+                                                                                5.00
+                                                                                                                <span class='note'>(zmienne w czasie)</span>
+                                        <img class="smarty-tip-wrapper" data-id="40e4853c01f0580456197942627188c7" data-content="
+                    Podstawowe informacje o zasadach przyporządkowania punkt&oacute;w ECTS:&lt;br&gt;
+                    - roczny wymiar godzinowy nakładu pracy studenta konieczny do
+                    osiągnięcia zakładanych efekt&oacute;w kształcenia dla danego etapu
+                    studi&oacute;w wynosi 1500-1800 h, co odpowiada 60 ECTS;&lt;br&gt;
+                    - tygodniowy wymiar godzinowy nakładu pracy studenta wynosi 45 h;&lt;br&gt;
+                    - 1 punkt ECTS odpowiada 25-30 godzinom pracy studenta potrzebnej
+                    do osiągnięcia zakładanych efekt&oacute;w kształcenia;&lt;br&gt;
+                    - tygodniowy nakład pracy studenta konieczny do osiągnięcia zakładanych
+                    efekt&oacute;w kształcenia pozwala uzyskać 1,5 ECTS;&lt;br&gt;
+                    - nakład pracy potrzebny do zaliczenia przedmiotu, kt&oacute;remu przypisano
+                    3 ECTS, stanowi 10% semestralnego obciążenia studenta.
+                " src="https://usosweb.umk.pl//img/tip_info.gif">
+                                        <br>
+                <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/regulyPunktacjiPrzedmiotu&prz_kod=0800-48EDI' onclick='return Common.confirmWarnings();'  class='wrgrey'  class='wrgrey' ><img src='https://usosweb.umk.pl/img/skocz.gif' style='padding: 2px 4px 0 0;'></a><a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/regulyPunktacjiPrzedmiotu&prz_kod=0800-48EDI' onclick='return Common.confirmWarnings();'  class='wrgrey'  class='wrgrey' >zobacz reguły punktacji</a>
+                    </td>
+    </tr>
+    <tr class='strong'>
+        <td class='strong' style='text-align: right'>Język prowadzenia:</td>
+        <td class='data' colspan='3'>
+            polski
+        </td>
+    </tr>
+                        <tr >
+                <td class='strong' style='text-align: right; vertical-align: top'>Wymagania wstępne:</td>
+                <td class='data' colspan='3'>brak <br></td>
+            </tr>
+                                <tr class='strong'>
+                <td class='strong' style='text-align: right; vertical-align: top'>Całkowity nakład pracy studenta:</td>
+                <td class='data' colspan='3'>100 godzin<br />
+30 udział w wykładzie,<br />
+30 udział w ćwiczeniach<br />
+10 konsultacje, zaliczenie oraz kontakt e-mailowy<br />
+20 przygotowanie do ćwiczeń i zaliczenia końcowego (egzaminu)<br />
+10 przygotowanie prezentacji<br></td>
+            </tr>
+                                <tr >
+                <td class='strong' style='text-align: right; vertical-align: top'>Efekty kształcenia -   wiedza:</td>
+                <td class='data' colspan='3'>W1 -Student potrafi zdefiniować i objaśniać podstawowe pojęcia ekonomiczne<br></td>
+            </tr>
+                                <tr class='strong'>
+                <td class='strong' style='text-align: right; vertical-align: top'>Efekty kształcenia -  umiejętności:</td>
+                <td class='data' colspan='3'>U1 -Student potrafi analizować podstawowe zjawiska ekonomiczne - rozróżnia koszty produkcji, struktury gospodarcze.<br />
+U2- Student umie ocenić podstawowe zjawiska makroekonomiczne <br></td>
+            </tr>
+                                <tr >
+                <td class='strong' style='text-align: right; vertical-align: top'>Efekty kształcenia - kompetencje społeczne:</td>
+                <td class='data' colspan='3'>K1- Student pracuje systematycznie i ma pozytywne podejście do trudności stojących na drodze do realizacji założonego celu; dotrzymuje terminów; rozumie konieczność systematycznej pracy nad wszelkimi projektami, które mają długofalowy charakter<br></td>
+            </tr>
+                                <tr class='strong'>
+                <td class='strong' style='text-align: right; vertical-align: top'>Metody dydaktyczne:</td>
+                <td class='data' colspan='3'>wykład i ćwiczenia<br></td>
+            </tr>
+                                <tr >
+                <td class='strong' style='text-align: right; vertical-align: top'>Metody dydaktyczne podające:</td>
+                <td class='data' colspan='3'>- opis<br>- wykład informacyjny (konwencjonalny)<br>- wykład problemowy<br></td>
+            </tr>
+                                <tr class='strong'>
+                <td class='strong' style='text-align: right; vertical-align: top'>Metody dydaktyczne poszukujące:</td>
+                <td class='data' colspan='3'>- ćwiczeniowa<br>- referatu<br></td>
+            </tr>
+                        <tr >
+            <td class='strong' style='text-align: right; vertical-align: top'>Skrócony opis:</td>
+            <td class='data userhtml' colspan='3'>
+                <p style='margin:0px 0px 6px 0px'>Ekonomia w ujęciu mikro i makro.</p>
+
+            </td>
+        </tr>
+                <tr class='strong'>
+            <td class='strong' style='text-align: right; vertical-align: top'>Pełny opis:</td>
+            <td class='data userhtml' colspan='3'>
+                <p style='margin:0px 0px 6px 0px'>1. Ekonomia jako dyscyplina wiedzy. </p>
+<p style='margin:0px 0px 6px 0px'>2. Rynek. Podaż, popyt, cena. </p>
+<p style='margin:0px 0px 6px 0px'>3. Podstawy mikroekonomii, elementy teorii producenta.</p>
+<p style='margin:0px 0px 6px 0px'>4. Elemanty teorii konsumenta.</p>
+<p style='margin:0px 0px 6px 0px'>5. Podstawy makroekonomii. Produkt krajowy brutto</p>
+<p style='margin:0px 0px 6px 0px'>6. Deficyt budżetowy. Podatki i wydatki budżetowe a dochód narodowy. </p>
+<p style='margin:0px 0px 6px 0px'>7. Pieniądz, Równowaga na rynku pieniądza. Banki, system bankowy</p>
+<p style='margin:0px 0px 6px 0px'>8. Polityka ekonomiczna i jej wpływ na procesy gospodarcze</p>
+<p style='margin:0px 0px 6px 0px'>9.Teoria zatrudnienia i bezrobocia. Rynek pracy w wymiarze</p>
+<p style='margin:0px 0px 6px 0px'>makroekonomicznym. </p>
+<p style='margin:0px 0px 6px 0px'>10. Inflacja jako problem makroekonomiczny. </p>
+<p style='margin:0px 0px 6px 0px'>11. Koniunktura w gospodarce rynkowej.  </p>
+<p style='margin:0px 0px 6px 0px'>12. Międzynarodowe stosunki ekonomiczne. Wymiana handlowa. Bilans płatniczy. Kurs walutowy.  </p>
+<p style='margin:0px 0px 6px 0px'>13. Ekonomia dobrobytu. Zawodność rynku. </p>
+<p style='margin:0px 0px 6px 0px'>14. Jednolity rynek Wspólnoty Europejskiej. Pomoc publiczna dla firm oraz ze środków Unii Europejskiej. Innowacyjność przedsiębiorstw w Unii Europejskiej.</p>
+<p style='margin:0px 0px 6px 0px'>15. Gospodarka polska na tle UE</p>
+<p style='margin:20px 0px 6px 0px'>Ćwiczenia:</p>
+<p style='margin:0px 0px 6px 0px'>1. Wprowadzenie do ekonomii</p>
+<p style='margin:0px 0px 6px 0px'>2. Ekonomia, zarządzanie, marketing, negocjacje jako warunek dochodzenia do równowagi</p>
+<p style='margin:0px 0px 6px 0px'>3. Mechanizm rynkowy</p>
+<p style='margin:0px 0px 6px 0px'>4. Producent jako podmiot gospodarowania</p>
+<p style='margin:0px 0px 6px 0px'>5. Kolokwium</p>
+<p style='margin:0px 0px 6px 0px'>6. Produkt krajowy brutto i inne kategorie dochodu narodowego</p>
+<p style='margin:0px 0px 6px 0px'>7. Problemy bezrobocia</p>
+<p style='margin:0px 0px 6px 0px'>8. Inflacja</p>
+<p style='margin:0px 0px 6px 0px'>9. Pieniądz</p>
+<p style='margin:0px 0px 6px 0px'>10. System pieniężno-kredytowy</p>
+<p style='margin:0px 0px 6px 0px'>11. System finansowy państwa</p>
+<p style='margin:0px 0px 6px 0px'>12. Rynki czynników produkcji</p>
+<p style='margin:0px 0px 6px 0px'>13. Handel międzynarodowy</p>
+<p style='margin:0px 0px 6px 0px'>14. Wybrane współczesne problemy gospodarcze</p>
+<p style='margin:0px 0px 6px 0px'>15. Podsumowanie Kolokwium</p>
+<p style='margin:0px 0px 6px 0px'>3.</p>
+
+            </td>
+        </tr>
+                <tr >
+            <td class='strong' style='text-align: right; vertical-align: top'>Literatura:</td>
+            <td class='data userhtml' colspan='3'>
+                <p style='margin:0px 0px 6px 0px'>Podstawy ekonomii, pr.zb. pod red. R. Milewskiego,</p>
+<p style='margin:0px 0px 6px 0px'>Wybrane problemy ekonomii. Ćwiczenia z zadaniami, pod red. E. Skawińskiej, Wyd. Politechniki Poznańskiej, Poznań 2003.</p>
+
+            </td>
+        </tr>
+                    <tr class='strong'>
+            <td class='strong' style='text-align: right; vertical-align: top'>Metody i kryteria oceniania:</td>
+            <td class='data userhtml' colspan='3'>
+                <p style='margin:0px 0px 6px 0px'>Wykład z wykorzystaniem power pointu. </p>
+<p style='margin:0px 0px 6px 0px'>Ćwiczenia - dyskusja, prezentacje studentów, analiza przypadków, rozwiązywanie zadań. U1, K1</p>
+<p style='margin:0px 0px 6px 0px'>Wykład - kolokwium zaliczeniowe W1</p>
+<p style='margin:0px 0px 6px 0px'>Ćwiczenia - prezentacje na tematy gospodarcze U2</p>
+<p style='margin:0px 0px 6px 0px'>Kolokwium - U1</p>
+
+            </td>
+        </tr>
+                <tr >
+            <td class='strong' style='text-align: right; vertical-align: top'>Praktyki zawodowe:</td>
+            <td class='data userhtml' colspan='3'>
+                <p style='margin:0px 0px 6px 0px'>brak praktyk zawodowych</p>
+
+            </td>
+        </tr>
+    </table>
+
+
+    <h2>
+        Zajęcia w cyklu
+        <i>"Semestr zimowy 2014/15"</i>
+        <span class='note'>
+                                                                            (zakończony)
+                    </span>
+    </h2>
+    <table class='grey' cellspacing='1px'>
+        <tr class='strong'>
+            <td class='strong' style='text-align: right'>Okres:</td>
+            <td class='data' style='vertical-align:middle'>
+                2014-10-01 - 2015-02-24
+            </td>
+                                    <td style='background: #ffffff; text-align: right; padding: 8px 10px; border: 2px solid #aaa; ' rowspan='6'>
+                <div style='background:#eee; border: 1px solid #ccc; padding: 3px 5px; margin-bottom:10px;text-align:center'>
+                    
+    
+                
+    
+    
+
+<span style='white-space:nowrap'>
+                        <img class="smarty-tip-wrapper " data-id="7b5eb0f5a6c76fbf48b91159352e6943" data-content="Aktualnie rejestracja jest zamknięta - nikt nie może się rejestrować." src="https://usosweb.umk.pl//img/koszyk_x.gif">
+                <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/rejestracjaNaPrzedmiotCyklu&prz_kod=0800-48EDI&cdyd_kod=2014%2F15Z&callback=g_825e24bb' onclick='return Common.confirmWarnings();'   ><img class="smarty-tip-wrapper" data-id="7109ee98d10c39c35dca40637edfa316" data-content="
+            szczeg&oacute;ły...
+        " src="https://usosweb.umk.pl//img/greyinfolink.gif"></a>
+</span>
+
+                </div>
+                <script type='text/javascript'>function RegisterServlet_division_sel() {
+   var params = {};
+params['prz_kod'] = '0800-48EDI';   Common.servletRegister('division_sel', 'katalog2/przedmioty/pokazPrzedmiot', params);
+}
+RegisterServlet_division_sel();
+</script><div class='do_not_print' style='white-space: nowrap' align='left'><form><b>Wybrany podział planu:</b><br /><input id='g_c638737b' type='radio' class='radio ' name='division' style='vertical-align:middle;margin-left:0' value='week' onchange="" onclick="Common.servletUpdateParam('division_sel', 'division', 'week'); Common.servletPostback('division_sel');"    onclick="Common.servletUpdateParam('division_sel', 'division', 'week'); Common.servletPostback('division_sel');"> <label for='g_c638737b' >ten tydzień</label><br /><input id='g_c4d47937' type='radio' class='radio ' name='division' style='vertical-align:middle;margin-left:0' value='semester' onchange="" onclick="Common.servletUpdateParam('division_sel', 'division', 'semester'); Common.servletPostback('division_sel');" checked   onclick="Common.servletUpdateParam('division_sel', 'division', 'semester'); Common.servletPostback('division_sel');"> <label for='g_c4d47937' >cykl przedmiotu</label></form></div><br />
+                <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/pokazPlanZajecPrzedmiotu&prz_kod=0800-48EDI&cdyd_kod=2014%2F15Z&division=semester' onclick='return Common.confirmWarnings();'   ><img alt='powiększ' src='https://usosweb.umk.pl/kontroler.php?_action=common/pokazObrazekPlanu&srcGuid=77d2f547fe45c8196f2237ce290fa5fa' style='margin-bottom:3px'></a>
+                <br>
+                <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/pokazPlanZajecPrzedmiotu&prz_kod=0800-48EDI&cdyd_kod=2014%2F15Z&division=semester' onclick='return Common.confirmWarnings();'  class='wrgrey'  class='wrgrey' ><img src='https://usosweb.umk.pl/img/magnify.gif' style='padding: 0 3px 0 1px;vertical-align: middle;'></a><a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/pokazPlanZajecPrzedmiotu&prz_kod=0800-48EDI&cdyd_kod=2014%2F15Z&division=semester' onclick='return Common.confirmWarnings();'  class='wrgrey'  class='wrgrey' >zobacz plan zajęć</a>
+            </td>
+        </tr>
+        <tr >
+            <td class='strong' style='text-align: right'>Typ zajęć:</td>
+            <td class='data'>
+                                                            Ćwiczenia, 30 godzin                                                <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/pokazGrupyZajec&zaj_cyk_id=168558' onclick='return Common.confirmWarnings();'   ><img src='https://usosweb.umk.pl/img/skocz.gif' style='padding: 2px 4px 0 0;'></a><a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/pokazGrupyZajec&zaj_cyk_id=168558' onclick='return Common.confirmWarnings();'   >więcej informacji</a>
+                        <br>
+                                            Wykład, 30 godzin                                                <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/pokazGrupyZajec&zaj_cyk_id=168557' onclick='return Common.confirmWarnings();'   ><img src='https://usosweb.umk.pl/img/skocz.gif' style='padding: 2px 4px 0 0;'></a><a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/pokazGrupyZajec&zaj_cyk_id=168557' onclick='return Common.confirmWarnings();'   >więcej informacji</a>
+                        <br>
+                                                </td>
+        </tr>
+        <tr class='strong'>
+            <td class='strong' style='text-align: right'>Koordynatorzy:</td>
+            <td class='data'>
+                                                            <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/osoby/pokazOsobe&os_id=25155' onclick='return Common.confirmWarnings();'   >Ewa Zysnarska</a>                                                </td>
+        </tr>
+        <tr >
+            <td class='strong' style='text-align: right'>Prowadzący grup:</td>
+            <td class='data'>
+                                                            <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/osoby/pokazOsobe&os_id=40811' onclick='return Common.confirmWarnings();'   >Agnieszka Szulc</a>,                                             <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/osoby/pokazOsobe&os_id=25155' onclick='return Common.confirmWarnings();'   >Ewa Zysnarska</a>                                                </td>
+        </tr>
+                <tr class='strong'>
+            <td class='strong' style='text-align: right'>Lista&nbsp;studentów:</td>
+            <td class='data'>
+                                    <span class='note'>
+                        (nie masz dostępu)
+                    </span>
+                            </td>
+        </tr>
+        <tr >
+            <td class='strong' style='text-align: right'>Zaliczenie:</td>
+            <td class='data'>
+                                    Zaliczenie
+                            </td>
+        </tr>
+                                            </table>
+    <h2>
+        Zajęcia w cyklu
+        <i>"Semestr zimowy 2015/16"</i>
+        <span class='note'>
+                                                    (jeszcze nie rozpoczęty)
+                                            </span>
+    </h2>
+    <table class='grey' cellspacing='1px'>
+        <tr class='strong'>
+            <td class='strong' style='text-align: right'>Okres:</td>
+            <td class='data' style='vertical-align:middle'>
+                2015-10-01 - 2016-02-21
+            </td>
+                                    <td style='background: #ffffff; text-align: right; padding: 8px 10px; border: 2px solid #aaa; ' rowspan='6'>
+                <div style='background:#eee; border: 1px solid #ccc; padding: 3px 5px; margin-bottom:10px;text-align:center'>
+                    
+    
+                
+    
+    
+                    <span style='white-space:nowrap'>                                                                                                                                                                        <span class="smarty-tip-wrapper " data-id="bc3b1acfc64516918f64b30153f5a96c" data-content="
+                        &lt;b&gt;Stan zapełnienia grup:&lt;/b&gt;
+                        &lt;b&gt;83/140&lt;/b&gt; (zarejestrowanych/limit)
+                    ">
+            <div style='background: #fff; display: inline-block; border: 1px solid #888; width: 40px; height: 8px; text-align: left; margin: 4px; cursor: default'>
+                <div style='background: url(img/grad_gyr38.gif); display: inline-block; border: 1px solid #fff; width: 22px; height: 6px'></div>
+            </div>
+        </span>
+                                                                                                    </span>
+        <br>
+    
+<span style='white-space:nowrap'>
+                                        <form style='display:none' accept-charset='UTF-8' method='POST' enctype='multipart/form-data' action='kontroler.php' id='form_cf8e01018c29e3bacaf31aa049068a4c' ><input type='hidden' name='_action' value='actionx:dla_stud/rejestracja/brdg2/wyrejestruj(rej_kod:0851-2015@12f16Z;prz_kod:0800-48EDI;cdyd_kod:2015@12f16Z;odczyt:0;callback:g_825e24bb)'><input type='hidden' name='csrftoken' value='2015-09-30-3a1aac830ed3ed89'></form><script type='text/javascript'>function chain_4cc61ecaf0eb6184eb2702ad753a3198() {var chain = [function(){return confirm('Czy na pewno chcesz się wyrejestrować?');},function(){return Common.confirmWarnings();},function(){jQuery('#form_cf8e01018c29e3bacaf31aa049068a4c').submit();},function(){}];for (var i=0; i<chain.length; i++) { if (!chain[i]()) break; }}</script><a onclick='chain_4cc61ecaf0eb6184eb2702ad753a3198()'  class='wrhidden'  class='wrhidden' ><img class="smarty-tip-wrapper " data-id="b5479ada87b61eed39c55ebd1ba8db74" data-content="Kliknij tutaj żeby się &lt;b&gt;wyrejestrować&lt;/b&gt;." src="https://usosweb.umk.pl//img/koszyk_outB.gif"></a>
+                                                            <a href='https://usosweb.umk.pl/kontroler.php?_action=dla_stud/rejestracja/brdg2/grupyPrzedmiotu&rej_kod=0851-2015%2F16Z&prz_kod=0800-48EDI&cdyd_kod=2015%2F16Z&odczyt=1&callback=g_825e24bb' onclick='return Common.confirmWarnings();'  class='wrhidden'  class='wrhidden' ><img class="smarty-tip-wrapper " data-id="920b0de543d3a7737dd19a5de6f87d2e" data-content="Sprawdź aktualne zapełnienie grup zajęciowych." src="https://usosweb.umk.pl//img/rejB_zapelnienie.gif"></a>
+                            <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/rejestracjaNaPrzedmiotCyklu&prz_kod=0800-48EDI&cdyd_kod=2015%2F16Z&callback=g_825e24bb' onclick='return Common.confirmWarnings();'   ><img class="smarty-tip-wrapper" data-from-id="7109ee98d10c39c35dca40637edfa316" src="https://usosweb.umk.pl//img/greyinfolink.gif"></a>
+</span>
+
+                </div>
+                <script type='text/javascript'>function RegisterServlet_division_sel() {
+   var params = {};
+params['prz_kod'] = '0800-48EDI';   Common.servletRegister('division_sel', 'katalog2/przedmioty/pokazPrzedmiot', params);
+}
+RegisterServlet_division_sel();
+</script><div class='do_not_print' style='white-space: nowrap' align='left'><form><b>Wybrany podział planu:</b><br /><input id='g_02fac7c3' type='radio' class='radio ' name='division' style='vertical-align:middle;margin-left:0' value='week' onchange="" onclick="Common.servletUpdateParam('division_sel', 'division', 'week'); Common.servletPostback('division_sel');"    onclick="Common.servletUpdateParam('division_sel', 'division', 'week'); Common.servletPostback('division_sel');"> <label for='g_02fac7c3' >ten tydzień</label><br /><input id='g_91b09a1c' type='radio' class='radio ' name='division' style='vertical-align:middle;margin-left:0' value='semester' onchange="" onclick="Common.servletUpdateParam('division_sel', 'division', 'semester'); Common.servletPostback('division_sel');" checked   onclick="Common.servletUpdateParam('division_sel', 'division', 'semester'); Common.servletPostback('division_sel');"> <label for='g_91b09a1c' >cykl przedmiotu</label></form></div><br />
+                <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/pokazPlanZajecPrzedmiotu&prz_kod=0800-48EDI&cdyd_kod=2015%2F16Z&division=semester' onclick='return Common.confirmWarnings();'   ><img alt='powiększ' src='https://usosweb.umk.pl/kontroler.php?_action=common/pokazObrazekPlanu&srcGuid=d306d93c06151999de93973b2216d855' style='margin-bottom:3px'></a>
+                <br>
+                <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/pokazPlanZajecPrzedmiotu&prz_kod=0800-48EDI&cdyd_kod=2015%2F16Z&division=semester' onclick='return Common.confirmWarnings();'  class='wrgrey'  class='wrgrey' ><img src='https://usosweb.umk.pl/img/magnify.gif' style='padding: 0 3px 0 1px;vertical-align: middle;'></a><a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/pokazPlanZajecPrzedmiotu&prz_kod=0800-48EDI&cdyd_kod=2015%2F16Z&division=semester' onclick='return Common.confirmWarnings();'  class='wrgrey'  class='wrgrey' >zobacz plan zajęć</a>
+            </td>
+        </tr>
+        <tr >
+            <td class='strong' style='text-align: right'>Typ zajęć:</td>
+            <td class='data'>
+                                                            Ćwiczenia, 30 godzin                                                <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/pokazGrupyZajec&zaj_cyk_id=180773' onclick='return Common.confirmWarnings();'   ><img src='https://usosweb.umk.pl/img/skocz.gif' style='padding: 2px 4px 0 0;'></a><a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/pokazGrupyZajec&zaj_cyk_id=180773' onclick='return Common.confirmWarnings();'   >więcej informacji</a>
+                        <br>
+                                            Wykład, 30 godzin                                                <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/pokazGrupyZajec&zaj_cyk_id=180772' onclick='return Common.confirmWarnings();'   ><img src='https://usosweb.umk.pl/img/skocz.gif' style='padding: 2px 4px 0 0;'></a><a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/przedmioty/pokazGrupyZajec&zaj_cyk_id=180772' onclick='return Common.confirmWarnings();'   >więcej informacji</a>
+                        <br>
+                                                </td>
+        </tr>
+        <tr class='strong'>
+            <td class='strong' style='text-align: right'>Koordynatorzy:</td>
+            <td class='data'>
+                                                            <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/osoby/pokazOsobe&os_id=25155' onclick='return Common.confirmWarnings();'   >Ewa Zysnarska</a>                                                </td>
+        </tr>
+        <tr >
+            <td class='strong' style='text-align: right'>Prowadzący grup:</td>
+            <td class='data'>
+                                                            <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/osoby/pokazOsobe&os_id=40811' onclick='return Common.confirmWarnings();'   >Agnieszka Szulc</a>,                                             <a href='https://usosweb.umk.pl/kontroler.php?_action=katalog2/osoby/pokazOsobe&os_id=25155' onclick='return Common.confirmWarnings();'   >Ewa Zysnarska</a>                                                </td>
+        </tr>
+                <tr class='strong'>
+            <td class='strong' style='text-align: right'>Lista&nbsp;studentów:</td>
+            <td class='data'>
+                                    <span class='note'>
+                        (nie masz dostępu)
+                    </span>
+                            </td>
+        </tr>
+        <tr >
+            <td class='strong' style='text-align: right'>Zaliczenie:</td>
+            <td class='data'>
+                                    Zaliczenie
+                            </td>
+        </tr>
+                                            </table>
+
+<div style='margin-top: 20px; color: #888; text-align: center'>
+    Opisy przedmiotów w USOS i USOSweb są chronione prawem autorskim.<br> Właścicielem praw autorskich jest Uniwersytet Mikołaja Kopernika w Toruniu. 
+</div>
+
+</span>
+
+                            </div>
+                        </div></td>
+                                    </tr>
+            </table>
+
+            <div id='layout-footer' class='do_not_print'>
+                <p>
+                    Uniwersytecki System Obsługi Studiów
+                    :: USOSweb 6.1.0.0-6 (2015-09-15)
+                                        :: <a href='https://usosweb.umk.pl/kontroler.php?_action=news/kontakt' onclick='return Common.confirmWarnings();'   >kontakt</a>
+                </p>
+
+                                            </div>
+
+        </div>
+
+        
+        <script type='text/javascript' src='https://usosweb.umk.pl/static/changeLang/changeLang.js'></script>
+<script type='text/javascript' src='https://usosweb.umk.pl/js/jquery.fancybox/jquery.fancybox-1.3.4.pack.js'></script>
+
+
+    </body>
+</html>

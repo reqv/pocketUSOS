@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>PocketUSOS - interakcja ze systemem UsosWeb</title>
+	<link rel="Stylesheet" type="text/css" href="style.css">
+	<link href="shCore.css" rel="stylesheet" type="text/css">
+	<link href="shCoreMidnight.css" rel="stylesheet" type="text/css">
+	<meta charset="UTF-8">
+</head>
+
+<body>
+<div id="calosc">
+	<div id="left">
+		<a href="https://www.python.org" /><img src="logo.png" alt="Python Logo" /></a>
+		<ol>
+			<li><a href="#WSTEP">Wstęp</a></li>
+			<ul>
+				<li><a href="#wstep_czymjest">Czym jest PocketUSOS ?</a></li>
+				<li><a href="#wstep_uzywa">Jakich technologii używam w projecie?</a></li>
+				<li><a href="#wstep_zarys">Ogólny zarys projektu</a></li>
+			</ul>
+			<li><a href="#MODULES">Plik zakladki.py</a></li>
+			<ul>
+				<li><a href="#modules_dodatki">Klasa Dodatki</a></li>
+				<li><a href="#modules_oceny">Klasa Oceny</a></li>
+				<li><a href="#modules_WelcomeTab">Klasa WelcomeTab</a></li>
+			</ul>
+			<li><a href="#POCKETUSOS">Plik pocketUSOS.py</a></li>
+			<ul>
+				<li><a href="#pocketusos_CreateConfig">Metoda CreateConfig</a></li>
+				<li><a href="#pocketusos_LoadModules">Metoda LoadModules</a></li>
+				<li><a href="#pocketusos_DeleteModules">Metoda DeleteModules</a></li>
+				<li><a href="#pocketusos_init">Metoda __init__</a></li>
+				<li><a href="#pocketusos_CloseEvent">Metoda CloseEvent</a></li>
+				<li><a href="#pocketusos_main">Main</a></li>
+			</ul>
+		</ol>
+	</div>
+	<div id="right">
+		<a id="WSTEP"><h2>Wstęp</h2></a>
+			<p>Projekt powstał jako zaliczenie kursu komputerowego Python. Autorem programu jak i tego
+			tutorialu jest <span>Wojciech Janeczek.</span><br>W razię jakichkolwiek pytań lub sugestii 
+			prosze o kontakt na adres mailowy: <span>wojciech.janeczek na gmail.com</span><br>Najnowszy kod programu który 
+			może być kopiowany i modyfikowany oraz rozpowszechniany wedle uznania jako oprogramowanie OpenSource można znaleść pod tym <a href="https://github.com/wojjan/pocketUSOS">adresem</a>.
+		<a id="wstep_czymjest"><h3>Czym jest PocketUSOS ?</h3></a>
+			<p>Program pozwala na komunikację ze studenckim systemem USOS w celu pobierania jak i wysyłania
+			 do niego określonych danych zależnych od zakładek programu jest przeznaczony <span>tylko
+			 dla kont studenckich</span> i tylko na nich był testowany. Został zaprogramowany w środowisku systemu linux(arch).</p>
+		<a id="wstep_uzywa"><h3>Jakich technologii używam w projecie?</h3></a>
+			<p>Projekt został napisany w języku Python w <span>wersji 3.4.3</span> do pełnego funkcjonowania
+			 potrzebuje również dodatkowych bibliotek:<br>
+			* <a href="http://www.riverbankcomputing.co.uk/software/pyqt/intro">PyQt</a> w wersji 5.4.1 - w celu zapewnienia interfejsu graficznego<br>
+			* <a href="http://docs.python-requests.org/en/latest/">requests</a> w wersji 2.6.0  - w celu komunikacji z serwerem<br>
+			* <a href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a> w wersji 4.3.2 - w celu łatwiejszego i bezproblemowego parsowania otrzymanych danych
+			</p>
+		<a id="wstep_zarys"><h3>Ogólny zarys projektu</h3></a>
+			<p> Cała aplikacja składa się z dwóch plików: <span>pocketUSOS.py</span> i <span>zakladki.py</span><br>Pierwszy z nich jest głównym plikiem projektu
+			i to za jego pomocą zaczynamy prace z aplikacją. Zajmuje się on głównie tworzeniem okna głównego aplikacji do którego po zalogowaniu wczytywane są odpowiednie zakładki.
+			Oprócz tworzenia głównego okna jest w nim zawarta deklaracja słownika konfiguracyjnego <span>self.config</span> w którym zawarte są wszystkie informację potrzebne
+			do poprawnego działania aplikacji - są one potem przekazywane do wszystkich klas zakładek.</p>
+			<p>W pliku zakladki.py mozemy znaleść definicję klas zakładek, każda zakładka odpowiada za daną funkcję programu. Dla przykładu jedna z nich pobiera oceny i oblicza z nich
+			naszą średnią. Wszystkie elementy graficzne programu zostały stworzone za pomocą biblioteki PyQt. PyQt jest to port znanej biblioteki Qt napisanej w c++ do języka python.<br>
+			W celu przybliżenia zasad działania biblioteki Qt oraz tworzenia zakładek, przeanalizujemy poniższy przykładowy kod jednej z nich:</p>
+			<pre class="brush: python">
+				class Przyklad(Template):
+					def __init__(self,config):
+						super().__init__()
+						butt = QPushButton("Click ME",self)
+						butt.clicked.connect(self.wcisniety)
+						butt.show()
+						self.layout.addWidget(butt,0,0)
+						self.cn = config
+					def wcisniety(self):
+						qm = QMessageBox(self)
+						qm.setText(self.cn["LOGIN"])
+						qm.show()
+			</pre>
+			<p>Zadaniem tej klasy jest utworzenie przycisku(<span>Qbutton</span>) który ma za zadanie wyświetlić używany przez nas login, gdy tylko na niego klikniemy.</p>
+			<p>Nasza przykładowa klasa dziedziczy wszystkie metody i zmienne po klasie <span>Template</span> która jest rodzicem wszystkich klas zakładek <span>(!)</span>. Dziedziczymy
+			ją po to, aby w razie potrzeby, można było zmienić kod jednej klasy, a wprowadzić zmiany we wszystkich pozostałych. Dla przykładu możemy zmienić tło wszystkich zakładek na
+			określony kolor. Na chwilę obecną klasa Template posiada tylko definicję tworzenia zmiennej <span>szablonu</span> zakładki, do którego będziemy dodawać poszczególne elementy
+			typu przycisk lub pole edycji w celu ich poprawnego uporządkowania na zakładce. Klasa ta również posiada rodzica którym jest <span>QWidget</span> - wbudowana klasa Qt.
+			Zabierzmy się za <span>analizowanie kodu</span>: po pierwsze w metodzie __init__ która zostaje uruchamiana podczas tworzenia obiektu klasy, Tworzymy obiekt przycisku w którym
+			pojawi się napis "Click Me", drógim argumentem jest odwołanie przez klase na samą siebie, aby przycisk wiedział kim jest jego rodzic i nie został sierotą. Gdy mamy już nasz przycisk
+			warto zapewnić mu jakąś funkcję. W tym celu tworzymy dowiązanie do metody przycisku <span>clicked</span> za pomocą metody <span>connect()</span> której podajemy metode
+			wywoływaną wraz z pojawieniem się sygnału o kliknięciu na przycisk. W naszym przypadku jest to funkcja wewnętrzna klasy <span>self.wcisniety</span>. Warto by było również 
+			zobaczyć nasz przycisk, aby upewnić się, że bedzie on widoczny uruchamiamy na nim metode show(). Pod koniec dodajemy nasz przycisk do szablonu(layoutu) definiowanego w klasie
+			rodzica naszej klasy i utworzonego dla nas podczas wywołania metody <span>super().__init__()</span> która jest funkcją __init__ rodzica. Ostatnią rzeczą którą robimy w naszej
+			metodzie jest przypisanie zmiennej konfiguracyjnej(otrzymanej w argumencie) config do zmiennnej wewnętrznej klasy self.cn w celu późniejszego dostępu do danych z innych metod
+			tej klasy. Przyjrzyjmy się teraz metodzie <span>wcisniety</span> (która zostaje uruchomiona, gdy wciśniemy przycisk) tworzymy w niej proste okienko z informacją, ustawiamy
+			w nim informację odnośnie loginu, którą pobieramy z naszej zmiennej konfiguracyjnej, pokazujemy okienko i gotowe ! <br><br>W celu uzyskania większej ilości informacji o 
+			bibliotece Qt zapraszam do zapoznania się z jej dokumentacją pod adresem: <a href="http://doc.qt.io/qt-5/reference-overview.html">www.qt.io</a></p>
+		<hr>
+		<a id="MODULES"><h2>Plik zakladki.py</h2></a>
+			<p>Plik ten zawiera wszystkie zakładki dostępne w aplikacji. Każda zakładka posiada swoją klase która dziedziczy po klasie głównej <span>Template</span><br>Początek
+			pliku prezentuje się nastepująco: </p>
+			<pre class="brush: python">
+				#!/usr/bin/python3
+				#################################################################################################################
+				##################################################################################################################
+				#################################################################################################################
+				from PyQt5.QtWidgets import *
+				from PyQt5.QtCore import pyqtSignal
+				from threading import Thread
+				import requests
+				import shutil
+				from bs4 import BeautifulSoup
+				
+				class Template(QWidget):
+					def __init__(self):
+						super().__init__()
+						self.layout = QGridLayout()
+						self.setLayout(self.layout)
+			</pre>
+
+			<p>W powyższym kodzie możemy zaobserwować wraz z dołączeniem potrzebnych bibliotek, naszą klasę główną Template która dziedziczy z kolei po obiekcie <span>QWidget</span>
+			który jest standardowym widgetem Qt. Wywołuje ona konstruktor klasy QWidget, a następnie tworzy podstawowy layout(typu QGridLayout) zakładek dostepny i 
+			tworzony oddzielnie dla każdego z nich</p>
+		<a id="modules_dodatki"><h3>Klasa Dodatki</h3></a>
+			<p>Zakładka ta odpowiada za dodatkowe opcję programu, które są zbyt małe, aby tworzyć dla nich oddzielne klasy.<br> Na chwilę obecną zawiera on tylko możliwość pobrania
+			semestralnego planu zajęć</p>
+			<pre class="brush: python">
+				#################################################################################################################
+				########################################################### Dodatki CLASS #########################################
+				#################################################################################################################
+				class Dodatki(Template):
+					def __init__(self,config):
+						super().__init__()
+						self.cn = config
+						spacja = QSpacerItem(1000,1000)
+						self.mess1 = QLabel("")
+						bu1 = QPushButton("Pobierz plan")
+						bu1.clicked.connect(self.bu1_action)
+				
+						self.layout.addWidget(bu1,0,0)
+						self.layout.addWidget(self.mess1,2,0)
+						self.layout.addItem(spacja,1,0)
+				
+					def bu1_action(self):
+						strona = self.cn["PAGES"]["ACTION"] + "home/plan&division=semester"
+						#Pobranie strony
+						plan = self.cn["SESSION"].get(strona)
+						plan_text = BeautifulSoup(plan.text)
+						link = plan_text.find('img',usemap="#plan_image_map")
+						#Pobieram obrazek
+						r = self.cn["SESSION"].get(link["src"], stream=True)
+						if r.status_code == 200:
+							with open("plan.gif", 'wb') as filee:
+								r.raw.decode_content = 1
+								shutil.copyfileobj(r.raw, filee)
+						self.mess1.setText("Pobrano plan do folderu z programem.")
+			</pre>
+			<p>Początek klasy jest podobny do poprzednio opisywanych. W metodzie <span>__init__</span> tworzymy zmienną zawierająca referencje do zmiennej konfiguracyjnej
+			w celu późniejszego przetwarzania jej w kolejnej metodzie. Tworzymy również kontrolki przestrzeni - spacja, etykiety, przycisku i za pomocą funkcji clicked()
+			wiemy kiedy został wciśniety, od razu dowiązujemy go również za pomocą <span>connect()</span> do odpowiedniej metody która jest argumentem tej funkcji.<br>
+			W metodzie <span>bu1_action(self)</span>, którą uruchamiamy naciskając wcześniej utworzony przycisk, tworzymy stringa zawierającego link do strony, następnie pobieramy
+			ją przy pomocy <span>aktywnej sesji</span> oraz metody get(), tak otrzymaną stronę przerabiamy na zwykły tekst, z którego następnie wydobywamy link do naszego obrazka.
+			Gdy wiemy już gdzie znajduje się nasz obrazek z planem pobieramy ją tą samą metodą jak poprzednio lecz z opcją <span>stream=true</span> ponieważ nie chcemy, aby nasz
+			obrazek wczytywał się cały do pamięci lecz chcemy go zapisać do pliku. Gdy otrzymamy pozytywny status rozpoczęcia pobierania obrazka (200) rozpoczynamy jego zapis do pliku
+			"plan.gif". Musimy go również najpierw zdekodować, w tym celu ustawiamy flagę <span>r.raw.decode_content = 1</span> dzieki której przy zapisie sprawdzamy czy nasz plik
+			jest spakowany, czy też nadaje sie od razu do odczytu. Po pomyślnym pobraniu wyświetlamy komunikat.</p>
+		<a id="modules_oceny"><h3>Klasa Oceny</h3></a>
+			<p>Zakładka ta pozwala nam na pobranie naszych ocen z dowolnego semestru podając jego id oraz wylicza nam średnią na podstawie otrzymanych danych<br>
+			Ze względu na ilość kodu klasy Oceny, zostanie on podzielony na poszczególne metody:</p>
+			<pre class="brush: python">
+				#################################################################################################################
+				########################################################### Oceny CLASS ###########################################
+				#################################################################################################################
+				class Oceny(Template):
+					def __init__(self,config):
+						super().__init__()
+						#DEFINICJE STRON
+						self.act_oceny = config["PAGES"]["ACTION"] + "dla_stud/studia/oceny/index"
+				
+						#Pobranie strony
+						ocenki = config["SESSION"].get(self.act_oceny)
+						self.ocenki_txt = BeautifulSoup(ocenki.text)
+				
+						#layout
+						self.form = ""
+						self.scrool = QScrollArea()
+						self.scrool.setWidgetResizable(1)
+						self.scrool.setFixedHeight(400)
+						self.srednia = QLabel("")
+				
+						szukaj = QPushButton("Szukaj",self)
+						szukaj.clicked.connect(self.wyszukaj)
+						self.pole = QLineEdit()
+						label = QLabel("Podaj id tabeli z ocenami: ")
+						spacja = QSpacerItem(400,1)
+						self.layout.addItem(spacja,0,0)
+						self.layout.addWidget(label,0,1)
+						self.layout.addWidget(self.pole,0,2)
+						self.layout.addWidget(szukaj,0,3)
+						self.layout.addItem(spacja,0,4)
+						self.layout.addWidget(self.srednia,0,5)
+						self.layout.addWidget(self.scrool,1,0,1,6)
+			</pre>
+			<p>Powyżej został przedstawiony konstruktor klasy.
+			Pobieramy naszą zadeklarowaną w pierwszych liniach stronę z ocenami, przetwarzamy ją na tekst. Następnie w sekcji <span>#Layout</span> tworzymy obiekt QScrollArea który jest
+			<span>widokiem</span> umożliwiającym nam przewijanie zbyt dużego tekstu, zawartego na formatce, który z kolei pobiera ten element. W następnym akapicie tworzymy obiekty takie jak
+			button wyszukania oraz łączymy go z odpowiednią funkcją, pole edycyjne, etykiety, wypełniacze przestrzeni (spacja) i dodajemy wszystkie te elementy do naszego podstawowego
+			layoutu. </p>
+			<pre class="brush: python">
+				def wyszukaj(self):
+					self.wyczysc()
+					suma = 0
+					ile = 0
+					tabid = self.pole.displayText()
+					tab = self.ocenki_txt.find(id="tab"+tabid)
+					if tab == None:
+						return
+					tr = tab.find_all('tr')
+					for x in tr:
+						td = x.findAll("td")
+						typ = td[2].findAll("a")
+						ocena = td[2].findAll("span")
+						if len(typ) != len(ocena):
+							if ocena[0].string != "(brak ocen)":
+								typ.insert(0,"Ocena: ")
+							else:
+								typ.insert(0,"")
+						i = 0
+						j = len(ocena) -1
+						while j > -1:
+							if ocena[j].string[0] == "(" and ocena[j].string != "(brak ocen)":
+								del ocena[j]
+							j -= 1
+						calosc = ""
+						for l in ocena:
+							if calosc != "":
+								calosc += "\n"
+							if ocena[i].string != "ZAL" and ocena[i].string != "(brak ocen)":
+								suma += float(ocena[i].string.replace(",","."))
+								ile += 1
+							if typ[i] == "Ocena: " or typ[i] == "":
+								calosc += typ[i]
+							else:
+								calosc += typ[i].text +": "
+							calosc += ocena[i].string
+							i+=1
+						self.form.addRow(QLabel(td[0].find("a").text),QLabel(calosc))
+					if ile != 0:
+						suma = suma / ile
+					else:
+						suma = 0.0
+					self.srednia.setText("Średnia: {:.2}".format(suma))
+			</pre>
+			<p>W tej funkcji wyszukujemy tabele z pożądanymi przez nas ocenami na dany semestr. Najpierw czyścimy nasz layout -> self.form ze wszystkiego, tworzymy zmienne pomocnicze
+			pobieramy wartość z pola edycyjnego <span>self.pole</span> i w otrzymanym wcześniej kodzie strony wyszukujemy naszą tabele z ocenami. Jeżeli nie znajdziemy takiej tabeli 
+			to kończymy. Dzielimy otrzymana tabele na znaczniki <span>tr</span> i zapisujemy ich liste do zmiennej. W pętli for dla kazdego <span>tr</span> wyszukujemy wszystkie tagi 
+			<span>td</span> oraz pary rodzaj zajęć - ocena, jeżeli w usosie nie ma podanego typu zajęć lub nie wpisano żadnych ocen, dodajemy odpowiednie pola do zmiennej <span>
+			typ</span>. W następnej pętli usuwamy stare wpisy ocen. W kolejnej pętli tworzymy nasz string z wcześniej tworzonych par oraz sumujemy oceny, stringa dodajemy do formularza wraz 
+			z nazwą przedmiotu. Gdy przejdziemy przez wszystkie zmienne w liście <span>tr</span> dzielimy naszą sume przez ilość ocen i na końcu wpisujemy ją do naszego layouta.</p>
+			<pre class="brush: python">
+				def wyczysc(self):
+					del self.form
+					self.form = QFormLayout()
+					self.form.setHorizontalSpacing(80)
+					self.form.setVerticalSpacing(40)
+					grupa = QGroupBox("Dostepna lista ocen")
+					grupa.setLayout(self.form)
+					#wczytanie nowego
+					stary = self.scrool.takeWidget()
+					del stary
+					self.scrool.setWidget(grupa)
+			</pre>
+			<p>Ostatnia metoda klasy, odpowiedzialna jest za wyczyszczenie naszego layoutu. Tak naprawde zostaje on zniszczony, a do naszego obiektu QScrollArea zostaje dodany
+			nowy layout. Usuwamy layout self.form wraz z jego dziećmi, na jego miejsce tworzymy nowy obiekt <span>QFormLayout</span> - idealny dla wyświetlania formularzy. Formatujemy
+			go odpowiednio, a nastepnie wkładamy go do obiektu grupującego <span>QGroupBox</span> zabieramy stary element grupujacy z naszego widoku, usuwamy go, i dodajemy nowy utworzony.</p>
+		<a id="modules_WelcomeTab"><h3>Klasa WelcomeTab</h3></a>
+			<p>Klasa ta przejmuje na siebie funkcje związane z logowaniem, wylogowaniem, tworzeniem sesji i sprawdzaniem stanu zalogowania.<br> Klasa ta jest dość obszerna więc również została
+			podzielona na mniejsze kawałki.</p>
+			<pre class="brush: python">
+				#################################################################################################################
+				########################################################### LOGIN CLASS ##########################################
+				#################################################################################################################
+				class WelcomeTab(Template):
+					make = pyqtSignal()
+					delete = pyqtSignal()
+					def __init__(self,config):
+						super().__init__()
+						self.config = config
+						########################################################################
+						# strona logowania do usług UMK wraz z przekierowaniem do usługi USOSweb
+						self.LoginPage = config["PAGES"]["LOGIN"] + 'login?service=' + config["PAGES"]["ACTIONX"] + 'logowaniecas/index()' + '&locale=pl' 
+						# adres na który wchodzimy aby się wylogować
+						self.LogoutPage = config["PAGES"]["ACTIONX"] + 'logowaniecas/wyloguj()'
+						# MÓJ USOSWEB, służy do testowania poprawnego zalogowania
+						self.HomePage = config["PAGES"]["ACTIONX"] + 'home/index()'
+						########################################################################
+						#config
+						config["TABS"]["LOGIN"] = self
+				
+						#Sygnal
+						self.make.connect(config["TABS"]["GLOWNA"].LoadModules)
+						self.delete.connect(config["TABS"]["GLOWNA"].DeleteModules)
+				
+						#Wyswietlanie
+						self.message = QLabel("Wprowadź swoje dane, aby zalogować do USOS",self)
+						login = QLineEdit()
+						login.setObjectName("login")
+						login.textChanged.connect(self.wypisz_login)
+						self.login_str = ""
+						self.password_str = ""
+						password = QLineEdit()
+						password.setEchoMode(2)
+						password.textChanged.connect(self.wypisz_pass)
+						ok_butt = QPushButton("Zaloguj")
+						ok_butt.clicked.connect(self.button_clicked)
+						spacjaY = QSpacerItem(1,400)
+						spacjaX = QSpacerItem(200,1)
+			
+						#Login Form Local Layout
+						lay = QFormLayout()
+						lay.addRow("Konto: ",login)
+						lay.addRow("Hasło: ",password)
+						lay.addRow(ok_butt)
+			
+						#Add to Global Template
+						self.layout.addItem(spacjaY,0,0)
+						self.layout.addItem(spacjaX,1,0)
+						self.layout.addLayout(lay,1,1)
+						self.layout.addWidget(self.message,2,1)
+						self.layout.addItem(spacjaX,1,2)
+			</pre>
+			<p>Na początku klasy definiujemy dwa sygnały PyQt <span>make</span> oraz <span>delete</span> które będą dostępne dla każdej metody klasy. Następnie tworzymy metode inicjującą, 
+			czyli uruchamianą przy tworzeniu obiektu. Następnie przypisujemy konfiguracje z pliku pocketUSOS.py do zmiennej self.config co daje nam dostęp do niej w każdej metodzie.
+			Tworzymy odpowiednie stringi ze stronami, a następnie zapisujemy naszą klasę do ogólnej konfiguracji aplikacji, aby była dostępna dla innych zakładek. Łączymy nasze wcześniej
+			utworzone sygnały make i delete z odpowiednimi funkcjami aplikacji zapisanymi w pliku głównym. W akapicie wyświetlanie tworzymy wymagane kontrolki, ważne, aby dla kontrolki
+			pola password ustawić opcję <span>setEchoMode(2)</span> w celu ukrycia go przed dowolnym odczytem z ekranu i kopiowaniem. W kolejnym akapicie tworzony
+			jest layout formularza <span>QFormLayout</span> odpowiedzialnego za przyjmowanie naszych danych logowania. Na koniec łączymy to wszystko do naszego layoutu głównego, dziedziczonego
+			z klasy rodzica.</p>
+			<pre class="brush: python">
+				def wypisz_login(self,wy):
+					self.login_str = wy
+				def wypisz_pass(self,wy):
+					self.password_str = wy
+				def button_clicked(self):
+					self.send = self.sender()
+					self.send.setEnabled(0)
+					self.th = Thread(target=self.login)
+					self.th.start()
+			</pre>
+			<p>Następnie mamy trzy metody które są połączone z odpowiednimi kontrolkami w metodzie <span>__init__</span>. Funkcje <span>wypisz_login</span> oraz <span>wypisz_pass</span>
+			zajmują się pobieraniem odpowiednich danych z pól zadeklarowanych w konstruktorze. W razie zmiany tekstu pola, nowy tekst jest pobierany i zapisywany do zmiennych
+			<span>self.login</span> oraz <span>self.password</span> skąd są pobierane w kolejnych metodach w celu ich przetworzenia. Trzecia metoda odpowiedzialna jest za rozpoczęcie
+			procesu logowania poprzez uruchomienie wątku logującego, wątek jest używany w celu zabezpieczenia aplikacji przed stanem zamrożenia (freeze), dzięki czemu możemy informować
+			użytkownika o bieżących działaniach naszej aplikacji(główny wątek aplikacji zajmuje się odświeżaniem ekranu).
+			Metoda ta jest połączona z przyciskiem w metodzie <span>__init__</span>, zabezpiecza go też po kliknięciu, aby użytkownik nie mógł rozpocząć kolejnego logowania, 
+			gdy pierwsze nie jest jeszcze skończone.</p>
+			<pre class="brush: python">
+				def login(self):
+					if self.config["ONLINE"] == 0:
+						if(self.login_str == "" or self.password_str == ""):
+							self.message.setText("Proszę wypełnić wszystkie pola!")
+							self.send.setEnabled(1)
+							return
+						self.message.setText("Pobieram lt...")
+						self.config["LOGIN"] = self.login_str
+						self.config["PASSWORD"] = self.password_str
+						##########################################TU DZIALANIA LOGUJACE
+						self.config["SESSION"] = requests.Session()
+						session = self.config["SESSION"]
+						session.headers = self.config["HEADER"]
+						resp = session.get(self.LoginPage)
+						lt =  resp.text.partition('hidden" name="lt" value="')[2].partition('"')[0]
+						self.message.setText("Loguje do systemu...")
+						postData = {'username': self.config["LOGIN"], 'password': self.config["PASSWORD"], 'lt': lt,'execution': 'e1s1', '_eventId': 'submit'}
+						session.post(self.LoginPage,postData)
+						if self.LoginCheck() == 1:
+							self.message.setText("Nie udało się zalogować do systemu")
+							self.send.setEnabled(1)
+							return
+						##########################################
+						self.config["ONLINE"] = 1
+						self.make.emit()
+						self.send.setText("Wyloguj")
+						self.message.setText("Zalogowano do USOS")
+					else:
+						## WYLOGOWANIE
+						resp = self.config["SESSION"].get(self.LogoutPage)
+						if self.LoginCheck() == 1:
+							self.config["LOGIN"] = ""
+							self.config["PASSWORD"] = ""
+							self.delete.emit()
+							self.message.setText("Wylogowano ze systemu USOS")
+							self.send.setText("Zaloguj")
+							self.config["ONLINE"] = 0
+						else:
+							self.message.setText("Nie udało się wylogować ze systemu")
+					self.send.setEnabled(1)
+			</pre>
+			<p>Najważniejszą metodą tej zakładki jest metoda <span>login</span> - to ona zapewnia uwierzytelnianie się w systemie jak i bezpieczne z niego wylogowanie.
+			Metoda zaczyna od sprawdzenia, czy jesteśmy już zalogowani do systemu. Jeżeli nie rozpoczynamy proces logowania. Następnie sprawdzamy, czy użytkownik podał
+			wszystkie wymagane dane, jeżeli nie to wyświetlamy odpowiednią informację, odblokowujemy przycisk i wychodzimy z metody. Jeżeli przeszliśmy już pomyślnie
+			przez to sprawdzenie to wypisujemy informacje o pobieraniu danych z serwera oraz zapisujemy nasze dane logowania do konfiguracji. Rozpoczynamy działania 
+			logujące - tworzymy obiekt nowej <span>sesji</span> jest to bardzo ważny obiekt, ponieważ to z niego bedziemy odwoływać się w celu pobrania jakiejkolwiek
+			strony w jakimkolwiek module, przechowuje on równieź nasze ciasteczka, aby nie wpisywać ciągle długiej nazwy tej zmiennej przypisujemy ją do lokalnej zmiennej
+			<span>session</span>. Gdy mamy już naszą zmienną sesji ustawiamy dla niej nagłówek http, wpisany w konfiguracji. Pobieramy strone logowania i odczytujemy z niej
+			wartość pola <span>lt</span>. Następnie otrzymane dane przerabiamy na gotowe do wysłania oraz wysyłamy metodą <span>post()</span>, przyjmującą strone logowania
+			oraz dane, na serwer USOS. Jeżeli nie udało nam się zalogować, robimy odpowiednie prace, a jak jesteśmy zalogowani, ustawiamy odpowiednią flagę w konfiguracji,
+			wysyłamy sygnał do odpowiedniej funkcji w celu utworzenia tabów(zakładek) oraz ustawiamy odpowiednie teksty dla klawisza i informujące o zalogowaniu. Jeżeli jednak
+			wejdziemy do metody już zalogowani to wykona się wtedy jej druga część odpowiedzialna za <span>wylogowanie</span>. Podczas jej działania pobieramy strone umożliwiającą 
+			wylogowanie, tym samym ją aktywując. Następnie sprawdzamy czy wylogowanie zostało pomyślnie ukończone, w przypadku pozytywnym, czyścimy dane logujące, wysyłamy sygnał o
+			wylogowaniu w celu zlikwidowania tabów oraz zmieniamy odpowiednie ustawienia tekstowe - aktywujemy przycisk.</p>
+			<pre class="brush: python">
+				def LoginCheck(self):
+					odpowiedz = self.config["SESSION"].get(self.HomePage)
+					if(len(odpowiedz.history) == 0):
+						self.config["ONLINE"] = 1
+						return 0
+					else:
+						self.config["ONLINE"] = 0
+						return 1
+			</pre>
+			<p>Ostatnią metodą klasy jest <span>LoginCheck</span> jak sama nazwa wskazuje, pozwala ona na sprawdzenie, czy jesteśmy zalogowani do systemu. Chcemy wejść na naszą
+			strone domową w systemie. Sprawdzamy czy <span>nastąpiło przekierowanie</span>. Jeżeli nie nastąpiło, wiemy, że jesteśmy zalogowani, inaczej jest odwrotnie.</p>
+		<hr>
+		<a id="POCKETUSOS"><h2>Plik pocketUSOS.py</h2></a>
+			<p>W pliku tym znajduje się główne okno programu, ogólna konfiguracja aplikacji oraz funkcje pozwalające na obsługę zakładek z pliku zakladki.py.<br>
+			Biblioteki zaciągane do pliku:</p>
+			<pre class="brush: python">
+				#!/usr/bin/python3
+				import sys		#dostep do funkcji systemowych
+				from PyQt5.QtWidgets import QApplication,QDesktopWidget,QWidget,QTabWidget,QMessageBox	#dodatkowe formatki wyswietlane w oknie głównym
+				from PyQt5.QtCore import QCoreApplication, Qt	#biblioteka pozwalająca na utworzenie okna głównego
+				from data import zakladki as MOD		#wczytanie pliku z zakładkami
+			</pre>
+			<p>Wszystkie poniżej opisane funkcję są metodami klasy <span>PU_main</span></p>
+			<pre class="brush: python">
+				class PU_main(QWidget):
+			</pre>
+		<a id="pocketusos_CreateConfig"><h3>Metoda CreateConfig</h3></a>
+			<pre class="brush: python">
+				def CreateConfig(self):
+				'''Ustalenie konfiguracji programu'''
+					self.config["LOGIN"] = ""
+					self.config["PASSWORD"] = ""
+					self.config["ONLINE"] = 0
+					self.config["SESSION"] = ""
+					self.config["PAGES"] = {
+						"LOGIN":'https://login.umk.pl/',								# adres strony logowania
+						"USOS_DOMAIN":'usosweb.umk.pl',								# domena USOSweba UMK
+						"USOS":'https://usosweb.umk.pl/',								# adres do USOSweba
+						"CONTROLLER_ACTION":'kontroler.php?_action=actionx:',				# fragment URL oznaczający wykonanie akcji przez kontroler
+						"ACTION": 'https://usosweb.umk.pl/kontroler.php?_action=',			# pełny URL do którego wystarczy dokleić akcję/funkcję do wykonania
+						"ACTIONX": 'https://usosweb.umk.pl/kontroler.php?_action=actionx:'	# pełny URL do którego wystarczy dokleić akcję/funkcję do wykonania (actionx)
+					}
+					self.config["HEADER"]=[
+						('Host',            'usosweb.umk.pl'),
+						('Connection',      'keep-alive'),
+						('Accept',          'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'),
+						('User-Agent',      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.71 Safari/537.36'),
+						('Accept-Encoding', 'gzip,deflate,sdch'),
+						('Accept-Language', 'pl-PL,pl;q=0.8,en-US;q=0.6,en;q=0.4'),
+						('Accept-Charset',  'ISO-8859-2,utf-8;q=0.7,*;q=0.3')
+					]
+			</pre>
+			<p>Metoda ta zawiera w sobie całą konfigurację aplikacji. Każda zakładka przy tworzeniu otrzymuje referencje do obiektu config który jest tworzony wcześniej,a 
+			otrzymuje wszystkie dane konfiguracyjne właśnie w tej funkcji. Poszczególne pola konfiguracji to: login i hasło użytkownika, informacja czy jesteśmy online, 
+			informacje o aktualnej sesji, zadeklarowane strony(aby nie wpisywać ich w każdej z zakładek), słownik zawierający nagłówek http wysyłany przy próbach połączenia
+			z serwerem</p>
+		<a id="pocketusos_LoadModules"><h3>Metoda LoadModules</h3></a>	
+			<pre class="brush: python">
+				def LoadModules(self):
+					'''Wczytuje poszczegolne taby.'''
+					self.taby.addTab(MOD.Oceny(self.config),"Oceny")
+					self.taby.addTab(MOD.Dodatki(self.config),"Opcje Dodatkowe")
+			</pre>
+			<p>Metoda ta pozwala na automatyczne wczytanie wszystkich tabów po poprawnym logowaniu do serwera USOS. Obiekt self.taby jest obiektem <span>QTabWidget</span> frameworku Qt. 
+			Zawiera on wbudowaną metode <span>addTab</span> która pozwala na dodanie do tego widgetu tabów. Metoda ta przyjmuje jako argumenty nasz obiekt zakładki oraz stringa z dowolną nazwą</p>
+		<a id="pocketusos_DeleteModules"><h3>Metoda DeleteModules</h3></a>
+			<pre class="brush: python">
+				def DeleteModules(self):
+					ile = self.taby.count()
+					while(ile > 0):
+						self.taby.removeTab(ile)
+						ile -= 1
+			</pre>
+			<p>Przeciwieństwo metody LoadModules. Po poprawnym wylogowaniu z serwera usuwa poszczególne taby z obiektu self.taby przy pomocy wbudowanej metody removeTab()
+			przyjmującej w argumencie numer pożądanego obiektu</p>
+		<a id="pocketusos_init"><h3>Metoda __init__</h3></a>
+			<pre class="brush: python">
+				def __init__(self):
+					'''Init Class'''
+					super().__init__()
+					self.setGeometry(100, 100, 800, 600)
+					self.setWindowTitle('PocketUSOS - Witaj w programie')
+					self.config = { "TABS": {"GLOWNA":self} }
+					self.CreateConfig()
+					ilemaokno = self.frameSize()
+			
+					#Ustawienia tabow
+					self.taby = QTabWidget(self)
+					self.taby.resize(ilemaokno.width()-1,ilemaokno.height()-1)
+					self.taby.addTab(MOD.WelcomeTab(self.config),"Strona Logowania")
+					self.taby.show()
+		
+					#Ustawienia wyswietlania
+					wymiary = self.frameGeometry()
+					centerp = QDesktopWidget().availableGeometry().center()
+					wymiary.moveCenter(centerp)
+					self.move(wymiary.topLeft())
+					self.show()
+			</pre>
+			<p>Metoda ta jest swoistym <span>konstruktorem</span> klasy <span>PU_main</span>. Uruchamiany jest automatycznie przy tworzeniu obiektu klasy.
+			obiekt <span>super()</span> odwołuje się do klasy rodzica w celu uruchomienia jej konstruktora. W tym miejscu tworzone są wszystkie obiekty
+			potrzebne do poprawnego funkcjonowania programu jak i tworzony i dodawany jest tab odpowiedzialny za logowanie do systemu. Najpierw przy pomocy funkcji
+			setGeometry ustawiamy rozmiar naszego okna, potem jego tytuł, dodajemy równiesz nasze okno(<span>self - odwołanie do siebie</span>) do zmiennej trzymającej
+			konfiguracje oraz wywołujemy funkcję CreateConfig(). Po tych operacjach pobieramy rozmiar naszego okna. W nastepnym akapicie możemy zaobserwować tworzenie taba logowania.
+			W kolejnym ustawiamy nasze okno na środek ekranu.</p>
+		<a id="pocketusos_CloseEvent"><h3>Metoda CloseEvent</h3></a>
+			<pre class="brush: python">
+				def closeEvent(self, event):
+				'''Zamykam program'''
+				reply = QMessageBox.question(self, 'Wyjście z programu', "Czy na pewno chcesz zakończyć?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
+				if reply == QMessageBox.Yes:
+					event.accept()
+				else:
+					event.ignore()
+			</pre>
+			<p>Metoda uruchamiana przy próbie wyjścia z programu. Tworzy okno dialogowe, aby upewnić się czy użytkownik napewno chce wyjść z programu</p>
+		<a id="pocketusos_main"><h3>Main</h3></a>
+			<pre class="brush: python">
+				########################################################################################
+				########################################  Main Loop  ####################################
+				########################################################################################
+				if __name__ == '__main__':
+					app = QApplication(sys.argv)
+					okno = PU_main()
+					sys.exit(app.exec_())
+			</pre>
+			<p>Jest to główna pętla programu. Za pomocą funkcji warunkowej if sprawdzamy czy jesteśmy główną funkcją programu i jeżeli tak jest uruchamiamy główne okno programu
+			oraz tworzymy klase główną PU_main. Aplikacja automatycznie zamknie się po otrzymaniu <span>sygnału close</span></p>
+	</div>
+</div>
+
+<script type="text/javascript" src="shCore.js"></script>
+<script type="text/javascript" src="shBrushPython.js"></script>
+
+<script type="text/javascript">
+     SyntaxHighlighter.all()
+</script>
+
+</body>
+
+</html>

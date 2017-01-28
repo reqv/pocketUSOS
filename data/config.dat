@@ -1,0 +1,18 @@
+[GENERAL]
+LOGIN=254084@stud.umk.pl
+PASSWORD=
+TIMEOUT=2
+
+[PAGES]
+LOGIN=https://login.umk.pl/
+USOS=https://usosweb.umk.pl/
+CONTROLLER_ACTION=kontroler.php?_action=
+
+[NETWORKAGENT]
+Host=usosweb.umk.pl
+Connection=keep-alive
+Accept=text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+User-Agent=Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1500.71 Safari/537.36
+Accept-Encoding=gzip,deflate,sdch
+Accept-Language=pl-PL,pl;q=0.8,en-US;q=0.6,en;q=0.4
+Accept-Charset=ISO-8859-2,utf-8;q=0.7,*;q=0.3
