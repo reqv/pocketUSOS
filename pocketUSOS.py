@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 import sys
-import os
 from PyQt5.QtWidgets import QApplication,QDesktopWidget,QWidget,QTabWidget,QMessageBox
 from PyQt5.QtCore import QCoreApplication, Qt
 #{mods}#
@@ -22,10 +21,10 @@ class PU_main(QWidget):
 		file_pages = tempStr.partition("[PAGES]")[2].partition("[")[0].strip()
 		file_agent = tempStr.partition("[NETWORKAGENT]")[2].partition("[")[0].strip()
 
-		for x in file_general.split(os.linesep):
+		for x in file_general.splitlines():
 			self.config[x.partition("=")[0]] = x.partition("=")[2]
 		self.config["PAGES"] = {}
-		for x in file_pages.split(os.linesep):
+		for x in file_pages.splitlines():
 			self.config["PAGES"][x.partition("=")[0]] = x.partition("=")[2]
 		self.config["PAGES"].update(
 			{
@@ -35,7 +34,7 @@ class PU_main(QWidget):
 			}
 		)
 		self.config["HEADER"] = []
-		for x in file_agent.split(os.linesep):
+		for x in file_agent.splitlines():
 			self.config["HEADER"].append((x.partition("=")[0],x.partition("=")[2]))
 
 	def LoadModules(self):
@@ -80,7 +79,7 @@ class PU_main(QWidget):
 		'''Zamykam program'''
 		with open("data/config.dat","r") as f2r:
 			tempStr = f2r.read().strip()
-		tempStr = tempStr.split(os.linesep)
+		tempStr = tempStr.splitlines()
 		acc = 0
 		with open("data/config.dat","w") as f2w:
 			for x in tempStr:
@@ -91,7 +90,7 @@ class PU_main(QWidget):
 					f2w.write("LOGIN="+self.config["LOGIN"])
 				else:
 					f2w.write(x)
-				f2w.write(os.linesep)
+				f2w.write("\n")
 
 		if(self.config["ONLINE"] == 1):
 			reply = QMessageBox.warning(self, 'Wyjście z programu', "Czy na pewno chcesz wyjść z programu bez wylogowania?", QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
