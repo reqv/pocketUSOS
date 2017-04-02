@@ -101,8 +101,9 @@ class Login(ModulPU):
 			session.headers = self.config["HEADER"]
 			resp = session.get(self.LoginPage)
 			lt =  resp.text.partition('hidden" name="lt" value="')[2].partition('"')[0]
+			execut = resp.text.partition('hidden" name="execution" value="')[2].partition('"')[0]
 			self.message.setText("Loguje do systemu...")
-			postData = {'username': self.config["LOGIN"], 'password': self.config["PASSWORD"], 'lt': lt,'execution': 'e1s1', '_eventId': 'submit'}
+			postData = {'username': self.config["LOGIN"], 'password': self.config["PASSWORD"], 'lt': lt,'execution': execut, '_eventId': 'submit'}
 			session.post(self.LoginPage,postData)
 			if self.LoginCheck() == 1:
 				self.message.setText("Nie udało się zalogować do systemu")
