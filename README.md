@@ -1,7 +1,7 @@
 # pocketUSOS
 pocketUSOS is an unofficial communication and integration client for polish student system "USOS". Program was fully writen in Python3 and integrated with Qt interface by PyQt5 project.
 
-**!IMPORTANT:** There was an update for USOS security system and pocketUSOS can't log in to it right now because of request header differences. Update will be up shortly.
+**!IMPORTANT:** This application is no longer in development and may not work with current version of USOS Web application.
 
 ### Features
 - program is divided to modules (new ones can be added with easy) and base code
